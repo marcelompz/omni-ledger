@@ -1,0 +1,35 @@
+[project]
+name = "omniledger"
+version = "0.1.0"
+description = "OmniLedger - Standalone Accounting & General Ledger Service"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "sqlalchemy[asyncio]>=2.0.0",
+    "sqlmodel>=0.0.14",
+    "asyncpg>=0.29.0",
+    "alembic>=1.12.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.25.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.alembic]
+script_location = "alembic"
+sqlalchemy.url = "postgresql+asyncpg://orderflow:orderflow@localhost:5432/orderflow_db"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
