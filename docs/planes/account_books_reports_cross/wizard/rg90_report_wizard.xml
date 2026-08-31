@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-11-06 08:40:16
+    @author: drojo
+-->
+<odoo>
+
+    <!-- form view -->
+
+    <record id="rg90_report_wizard_form" model="ir.ui.view">
+        <field name="name">rg90.report.wizard.form</field>
+        <field name="model">rg90.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reporte RG90">
+                <header>
+                </header>
+                <group>
+                    <group>
+                        <field name="date_from" required="1"/>
+                        <field name="date_to" required="1"/>
+                        <field name="file_type" required="1" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+                    <group>
+                        <field name="report_type" required="1" widget="radio" options="{'horizontal': true}"/>
+                        <field name="invoice_state_ids" required="1" widget="many2many_checkboxes"/>
+                    </group>
+                </group>
+                <field name="lines_ids" invisible="1">
+                    <tree>
+                        <field name="currency_id"/>
+                        <field name="code"/>
+                        <field name="identification_type"/>
+                        <field name="partner_id"/>
+                        <field name="partner_vat"/>
+                        <field name="receipt_type"/>
+                        <field name="date"/>
+                        <field name="stamped"/>
+                        <field name="receipt_number"/>
+                        <field name="amount_iva10_tax_included"/>
+                        <field name="amount_iva5_tax_included"/>
+                        <field name="amount_iva0"/>
+                        <field name="amount_total"/>
+                        <field name="receipt_condition"/>
+                        <field name="foreign_currency"/>
+                        <field name="impute_iva"/>
+                        <field name="impute_ire"/>
+                        <field name="impute_irp"/>
+                        <field name="associated_receipt"/>
+                        <field name="stamped_associated_receipt"/>
+                        <field name="receipt_type_specific"/>
+                        <field name="account_number"/>
+                        <field name="bank"/>
+                        <field name="employer_vat"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button string=" Generar" name="button_action_generate_report" type="object" class="oe_highlight" icon="fa-file-text"/>
+                    <button string=" Cerrar" class="btn btn-secondary" special="cancel" icon="fa-window-close-o"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- window action -->
+
+    <record id="rg90_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Reportes RG90</field>
+        <field name="res_model">rg90.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- menu -->
+
+    <menuitem
+        id="rg90_report_wizard_menu"
+        name="Reportes RG90"
+        action="account_books_reports_cross.rg90_report_wizard_action"
+        parent="account_books_reports_cross.account_books_report_main_menu"
+        sequence="2"
+    />
+
+</odoo>

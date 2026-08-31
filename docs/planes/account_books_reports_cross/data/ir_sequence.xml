@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-11-06 13:36:43
+    @author: drojo
+-->
+<odoo>
+
+    <data noupdate="1">
+    
+        <record id="rg90_report_wizard_sequence" model="ir.sequence">
+            <field name="name">RG90 Report Wizard</field>
+            <field name="code">rg90.report.wizard</field>
+            <field name="active">TRUE</field>
+            <field name="padding">4</field>
+            <field name="number_next_actual">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="True"/>
+        </record>
+
+    </data>
+    
+
+</odoo>

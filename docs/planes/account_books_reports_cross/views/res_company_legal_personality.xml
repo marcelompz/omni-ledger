@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-10-28 10:24:32
+    @author: drojo
+-->
+<odoo>
+
+    <!-- tree view -->
+
+    <record id="res_company_legal_personality_tree" model="ir.ui.view">
+        <field name="name">res.company.legal.personality.tree</field>
+        <field name="model">res.company.legal.personality</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" sample="1">
+                <field name="name" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- window action -->
+
+    <record id="res_company_legal_personality_action" model="ir.actions.act_window">
+        <field name="name">Personería Jurídica</field>
+        <field name="res_model">res.company.legal.personality</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Oops, nada a ser mostrado!</p>
+        </field>
+    </record>
+
+    <!-- menu -->
+
+    <menuitem
+        id="accounting_reports_menu"
+        name="Reportes Contables Paraguay"
+        parent="base.menu_custom"
+        sequence="2"
+    />
+
+    <menuitem
+        id="res_company_legal_personality_menu"
+        name="Personería Jurídica"
+        action="account_books_reports_cross.res_company_legal_personality_action"
+        parent="account_books_reports_cross.accounting_reports_menu"
+        sequence="1"
+    />
+
+</odoo>

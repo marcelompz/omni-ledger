@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-12-10 10:20:24
+    @author: drojo
+-->
+<odoo>
+
+    <!-- wizard view -->
+
+    <record id="account_books_cancel_wizard_form" model="ir.ui.view">
+        <field name="name">account.books.cancel.wizard.form</field>
+        <field name="model">account.books.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="info" string="">
+                        <field name="account_id" invisible="1"/>
+                        <field name="reason" default_focus="1" required="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button 
+                        name="action_cancel_document" 
+                        type="object" 
+                        string="Cancelar documento" 
+                        class="btn-primary"
+                    />
+                    <button 
+                        string="Atras" 
+                        class="btn-secondary" 
+                        special="cancel"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

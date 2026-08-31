@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-10-17 13:09:52
+    @author: drojo
+-->
+<odoo>
+
+    <!-- report document -->
+    
+    <template id="report_account_books_report_document">
+        <t t-call="web.basic_layout">
+
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="font-size: 10px;">
+                    <t t-set="company" t-value="env.company"/>
+
+                    <!-- primary header -->
+                    <div class="text-center">
+                        <strong t-if="doc.report_type == 'out_invoice'">LIBRO VENTAS LEY 125</strong>
+                        <strong t-if="doc.report_type == 'in_invoice'">LIBRO COMPRAS LEY 125</strong>
+                    </div>
+                    <div class="text-center">
+                        <strong>CONTRIBUYENTE: <t t-esc="company.vat"/> - <t t-esc="company.name"/></strong>
+                    </div>
+                    <t t-set="activities" t-value="'/'.join(line.name for line in company.type_obligations_id)"/>
+                    <div class="text-center">
+                        <strong>PERIODO: <t t-esc="doc.date_from"/> al <t t-esc="doc.date_to"/> - ACTIVIDAD: <t t-esc="activities"/></strong>
+                    </div>
+
+                    <!-- result table -->
+
+                     <table class="table">
+                        <t-head>
+                            <tr>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">FECHA</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">TIPO TIMBRADO</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">DOCUMENTO</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">SERIE</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">CDC DOCUMENTO</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">TIMBRADO</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">VENCIM.</th>
+                                <th colspan="3" t-if="doc.report_type == 'out_invoice'" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">CLIENTE</th>
+                                <th colspan="3" t-if="doc.report_type == 'in_invoice'" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">PROVEEDOR</th>
+                                <th colspan="6" t-if="doc.report_type == 'out_invoice'" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">VALORES DE VENTAS</th>
+                                <th colspan="6" t-if="doc.report_type == 'in_invoice'" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">VALORES DE COMPRAS</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">MON.</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">CONDICIÓN</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">CUOTAS</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">OBSERVACIÓN</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">CUENTAS CONTABLES</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">CATEGORIA DEL PRODUCTO</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">FORMULARIO 145</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">MOTIVOS INCLUSIÓN</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">DETALLES INCLUSIÓN</th>
+                                <th rowspan="2" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">MOTIVO ANULADO</th>
+                                <th rowspan="2" t-if="doc.report_type == 'out_invoice'" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">FORMULARIO 120</th>
+                                <th rowspan="2" t-if="doc.report_type == 'in_invoice'" class="text-center" style="background-color: #3F93CA; vertical-align: middle;">TIPO</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">RAZÓN SOCIAL</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">RUC</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">DV</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">GRAV. 10%</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">GRAV. 5%</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">IVA 10%</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">IVA 5%</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">EXENTAS</th>
+                                <th class="text-center" style="background-color: #3F93CA; vertical-align: middle;">TOTAL</th>
+                            </tr>
+                        </t-head>
+                       <t-body>
+                            <tr t-foreach="doc.lines_ids" t-as="line">
+                                <td class="text-start"><span t-esc="line.invoice_date.strftime('%d-%m-%Y')"/></td>
+                                <td t-if="doc.report_type == 'out_invoice'" class="text-start"><span t-esc="line.authorization_id.name or ''"/></td>
+                                <td t-if="doc.report_type == 'in_invoice'" class="text-start"><span t-esc="line.in_invoice_latam_doc_type_id.name or ''"/></td>
+                                <td class="text-start"><span t-esc="line.invoice_number or ''"/></td>
+                                <td class="text-start"><span t-esc="line.serie or ''"/></td>
+                                <td class="text-start"><span t-esc="line.cdc or ''"/></td>
+                                <td t-if="doc.report_type == 'out_invoice'" class="text-start"><span t-esc="line.out_invoice_stamped or ''"/></td>
+                                <td t-if="doc.report_type == 'out_invoice'" class="text-start"><span t-esc="line.out_invoice_stamped_date_due.strftime('%d-%m-%Y') if line.authorization_id.pre_printed_invoice else ''"/></td>
+                                <td t-if="doc.report_type == 'in_invoice'" class="text-start"><span t-esc="line.in_invoice_stamped or ''"/></td>
+                                <td t-if="doc.report_type == 'in_invoice'" class="text-start"><span t-esc="line.in_invoice_stamped_date_due.strftime('%d-%m-%Y') if line.authorization_id.pre_printed_invoice else ''"/></td>
+                                <td class="text-start"><span t-esc="line.partner_id.name or ''"/></td>
+                                <td class="text-start"><span t-esc="line.partner_vat or ''"/></td>
+                                <td class="text-start"><span t-esc="line.partner_vat_dv or ''"/></td>
+                                <td class="text-end"><span t-esc="line.amount_iva10_tax_included or 0"/></td>
+                                <td class="text-end"><span t-esc="line.amount_iva5_tax_included or 0"/></td>
+                                <td class="text-end"><span t-esc="line.amount_iva10 or 0"/></td>
+                                <td class="text-end"><span t-esc="line.amount_iva5 or 0"/></td>
+                                <td class="text-end"><span t-esc="line.amount_iva0 or 0"/></td>
+                                <td class="text-end"><span t-esc="line.amount_total or 0"/></td>
+                                <td class="text-start"><span t-esc="line.invoice_id.currency_id.symbol or ''"/></td>
+                                <td class="text-start"><span t-esc="line.invoice_condition or ''"/></td>
+                                <td class="text-start"><span t-esc="line.installment_qty if line.invoice_id.invoice_payment_term_id.is_installment_payment else ''"/></td>
+                                <td class="text-start"><span t-esc="''"/></td>
+                                <td class="text-start"><span t-esc="line.accounts or ''"/></td>
+                                <td class="text-start"><span t-esc="line.product_categ or ''"/></td>
+                                <td class="text-start"><span t-esc="line.form145_id.name or ''"/></td>
+                                <td class="text-start"><span t-esc="line.reasons_inclusion_id.name or ''"/></td>
+                                <td class="text-start"><span t-esc="line.details_inclusion or ''"/></td>
+                                <td class="text-start"><span t-esc="line.reasons_cancelled or ''"/></td>
+                                <td class="text-start"><span t-esc="line.form120_id.name or ''"/></td>
+                            </tr>
+                        </t-body>
+                    </table>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- report action -->
+
+    <record id="action_report_account_books_report" model="ir.actions.report">
+        <field name="name">Reporte Libros IVA</field>
+        <field name="model">account.books.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">account_books_reports_cross.report_account_books_report_document</field>
+        <field name="report_file">account_books_reports_cross.report_account_books_report_document</field>
+        <field name="binding_model_id" eval="False"/>
+        <field name="paperformat_id" ref="account_books_reports_cross.paperformat_folio_landscape_narrow"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">('Reporte Libro %s - %s a %s' % (dict(object.fields_get(allfields=['report_type'])['report_type']['selection'])[object.report_type], object.date_from.strftime('%d-%m-%Y'), object.date_to.strftime('%d-%m-%Y')))</field>
+    </record>
+
+</odoo>

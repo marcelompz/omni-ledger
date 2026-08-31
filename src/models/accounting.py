@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Numeric, DateTime, Index
+from sqlalchemy import Column, Integer, String, Numeric, DateTime, Boolean, Text, Index, JSON
 from sqlalchemy.sql import func
 from src.models.base import Base
 
@@ -8,16 +8,17 @@ class AccountAccount(Base):
 
     id = Column(Integer, primary_key=True)
     tenant_id = Column(Integer, nullable=False, index=True)
-    code = Column(String(100), nullable=False)
-    name = Column(String(200), nullable=False)
-    parent_id = Column(Integer, nullable=True)
-    level = Column(Integer, nullable=False, default=0)
+    code_store = Column(JSON, nullable=False)  # JSONB real de Odoo
+    name = Column(Text, nullable=False)
     account_type = Column(String(50), nullable=True)
+    deprecated = Column(Boolean, nullable=False, default=False)
+    reconcile = Column(Boolean, nullable=False, default=False)
+    currency_id = Column(Integer, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
 
     __table_args__ = (
-        Index("uq_account_accounts_tenant_code", "tenant_id", "code", unique=True),
+        Index("uq_account_accounts_tenant_code", "tenant_id", "code_store", unique=True, postgresql_using="gin"),
     )
 
 
@@ -42,16 +43,41 @@ class AccountMove(Base):
 
     id = Column(Integer, primary_key=True)
     tenant_id = Column(Integer, nullable=False, index=True)
+    name = Column(String(100), nullable=True)
     ref = Column(String(100), nullable=True)
     date = Column(DateTime(timezone=True), nullable=False)
     state = Column(String(20), nullable=False, default="draft")
-    description = Column(String(500), nullable=True)
+    move_type = Column(String(20), nullable=False)
+    description = Column(Text, nullable=True)
     partner_id = Column(Integer, nullable=True)
+    journal_id = Column(Integer, nullable=True)
+    currency_id = Column(Integer, nullable=True)
+    amount_untaxed = Column(Numeric(19, 2), nullable=False, default=0)
+    amount_tax = Column(Numeric(19, 2), nullable=False, default=0)
+    amount_total = Column(Numeric(19, 2), nullable=False, default=0)
+    amount_residual = Column(Numeric(19, 2), nullable=False, default=0)
+    invoice_date = Column(DateTime(timezone=True), nullable=True)
+    invoice_number = Column(String(100), nullable=True)
+    authorization_id = Column(Integer, nullable=True)
+    timbrado_id = Column(Integer, nullable=True)
+    fiscal_document = Column(Boolean, nullable=False, default=False)
+    is_ed = Column(Boolean, nullable=False, default=False)
+    is_ed_cancelled = Column(Boolean, nullable=False, default=False)
+    res90_tipo_identificacion = Column(String(10), nullable=True)
+    res90_tipo_comprobante = Column(String(10), nullable=True)
+    res90_nro_timbrado = Column(String(50), nullable=True)
+    res90_nro_comprobante_asociado = Column(String(50), nullable=True)
+    res90_timbrado_comprobante_asociado = Column(String(50), nullable=True)
+    res90_imputa_iva = Column(Boolean, nullable=True)
+    res90_imputa_ire = Column(Boolean, nullable=True)
+    res90_imputa_irp_rsp = Column(Boolean, nullable=True)
+    res90_no_imputa = Column(Boolean, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
 
     __table_args__ = (
         Index("ix_account_moves_tenant_state", "tenant_id", "state"),
+        Index("ix_account_moves_tenant_type", "tenant_id", "move_type"),
     )
 
 
@@ -63,9 +89,14 @@ class AccountMoveLine(Base):
     move_id = Column(Integer, nullable=False, index=True)
     account_id = Column(Integer, nullable=False, index=True)
     partner_id = Column(Integer, nullable=True)
+    name = Column(Text, nullable=True)
+    quantity = Column(Numeric(19, 2), nullable=False, default=1)
+    price_unit = Column(Numeric(19, 2), nullable=False, default=0)
+    price_total = Column(Numeric(19, 2), nullable=False, default=0)
     debit = Column(Numeric(19, 2), nullable=False, default=0)
     credit = Column(Numeric(19, 2), nullable=False, default=0)
-    description = Column(String(500), nullable=True)
+    tax_base_amount = Column(Numeric(19, 2), nullable=False, default=0)
+    tax_line_id = Column(Integer, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 
     __table_args__ = (
@@ -79,15 +110,15 @@ class AccountTax(Base):
 
     id = Column(Integer, primary_key=True)
     tenant_id = Column(Integer, nullable=False, index=True)
-    code = Column(String(50), nullable=False)
     name = Column(String(200), nullable=False)
     amount = Column(Numeric(5, 2), nullable=False)
-    type = Column(String(20), nullable=False)
+    type_tax_use = Column(String(20), nullable=False)
+    active = Column(Boolean, nullable=False, default=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
 
     __table_args__ = (
-        Index("uq_account_taxes_tenant_code", "tenant_id", "code", unique=True),
+        Index("uq_account_taxes_tenant_name", "tenant_id", "name", unique=True),
     )
 
 
@@ -132,3 +163,15 @@ class TenantSchemaVersion(Base):
     __table_args__ = (
         Index("uq_tenant_schema_version_tenant", "tenant_id", unique=True),
     )
+
+
+class Authorization(Base):
+    __tablename__ = "authorizations"
+
+    id = Column(Integer, primary_key=True)
+    tenant_id = Column(Integer, nullable=False, index=True)
+    name = Column(String(200), nullable=True)
+    stamped = Column(String(50), nullable=True)
+    date_to = Column(DateTime(timezone=True), nullable=True)
+    pre_printed_invoice = Column(Boolean, nullable=False, default=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)

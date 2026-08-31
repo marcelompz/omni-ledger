@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-10-17 13:08:10
+    @author: drojo
+-->
+<odoo>
+    <data noupdate="1">
+    
+        <!-- Paper Folio Landscape format -->
+        
+        <record id="paperformat_folio_landscape_narrow" model="report.paperformat">
+            <field name="name">Cuentas a cobrar/pagar horizontal</field>
+            <field name="default" eval="False" />
+            <field name="format">Folio</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="dpi">90</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+        </record>
+
+        <record id="paperformat_folio_portrait_narrow" model="report.paperformat">
+            <field name="name">Cuentas a cobrar/pagar vertical</field>
+            <field name="default" eval="False" />
+            <field name="format">Folio</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="dpi">90</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+        </record>
+    
+    </data>
+</odoo>

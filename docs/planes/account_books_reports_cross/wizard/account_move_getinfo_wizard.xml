@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-12-10 14:39:44
+    @author: drojo
+-->
+<odoo>
+
+    <!-- form view -->
+
+    <record id="account_move_getinfo_wizard_form" model="ir.ui.view">
+        <field name="name">account.move.getinfo.wizard.form</field>
+        <field name="model">account.move.getinfo.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Obtener" name="get_info" type="object" class="oe_highlight" />
+                    <button string="Cancelar" class="btn btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-12-16 16:48:46
+    @author: drojo
+-->
+<odoo>
+
+    <!-- form view -->
+
+    <record id="account_payment_term_inherit_form" model="ir.ui.view">
+        <field name="name">account.payment.term.inherit.form</field>
+        <field name="model">account.payment.term</field>
+        <field name="inherit_id" ref="l10n_py.account_payment_term_inherit_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='is_cash_payment']" position="after">
+                <field name="is_installment_payment"/>
+            </xpath>
+        
+        </field>
+    </record>
+
+</odoo>

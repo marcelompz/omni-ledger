@@ -1,0 +1,5 @@
+id,name
+cross_amrt_out_invoice,VENTAS
+cross_amrt_in_invoice,COMPRAS
+cross_amrt_income,INGRESOS
+cross_amrt_revenue,EGRESOS

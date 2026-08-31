@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-12-02 11:07:42
+    @author: drojo
+-->
+<odoo>
+
+    <!-- tree view -->
+
+    <record id="account_move_form_type_tree" model="ir.ui.view">
+        <field name="name">account.move.form.type.tree</field>
+        <field name="model">account.move.form.type</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" sample="1">
+                <field name="form_number"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- window action -->
+
+    <record id="account_move_form_type_action" model="ir.actions.act_window">
+        <field name="name">Formularios contables</field>
+        <field name="res_model">account.move.form.type</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Oops, nada a ser mostrado!</p>
+        </field>
+    </record>
+
+    <!-- menu -->
+
+    <menuitem
+        id="account_move_form_type_menu"
+        name="Formularios contables"
+        action="account_books_reports_cross.account_move_form_type_action"
+        parent="account_books_reports_cross.accounting_reports_menu"
+        sequence="4"
+    />
+
+</odoo>

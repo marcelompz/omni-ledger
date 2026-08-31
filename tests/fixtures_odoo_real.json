@@ -1,0 +1,940 @@
+{
+  "moves": [
+    {
+      "id": 114713,
+      "name": "VTA/2026/09640",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1879000.0,
+      "amount_tax": 170818.0,
+      "amount_untaxed": 1708182.0,
+      "currency_id": 157,
+      "partner_id": 24756,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014533",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "PUERTOS Y ESTIBAJES SA",
+      "partner_vat": "80025504-6",
+      "country_id": 185
+    },
+    {
+      "id": 113872,
+      "name": "VTA/2026/09643",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 945000.0,
+      "amount_tax": 85909.0,
+      "amount_untaxed": 859091.0,
+      "currency_id": 157,
+      "partner_id": 28279,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014536",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "SAGAZ ARGUELLO, JONATHAN",
+      "partner_vat": "5421676-1",
+      "country_id": 185
+    },
+    {
+      "id": 114719,
+      "name": "VTA/2026/09644",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 5024500.0,
+      "amount_tax": 456773.0,
+      "amount_untaxed": 4567727.0,
+      "currency_id": 157,
+      "partner_id": 26042,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014537",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "MARIAM  S.A",
+      "partner_vat": "80045539-8",
+      "country_id": 185
+    },
+    {
+      "id": 114720,
+      "name": "VTA/2026/09645",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1701000.0,
+      "amount_tax": 154636.0,
+      "amount_untaxed": 1546364.0,
+      "currency_id": 157,
+      "partner_id": 24360,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014538",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "JUAN ALFREDO ALCARAZ BENITEZ",
+      "partner_vat": "2278110-2",
+      "country_id": 185
+    },
+    {
+      "id": 114721,
+      "name": "VTA/2026/09646",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1966020.0,
+      "amount_tax": 178729.0,
+      "amount_untaxed": 1787291.0,
+      "currency_id": 157,
+      "partner_id": 25020,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014539",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "FERNANDEZ GONZALEZ, JULIO CESAR",
+      "partner_vat": "3638829-7",
+      "country_id": 185
+    },
+    {
+      "id": 114722,
+      "name": "VTA/2026/09647",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1211760.0,
+      "amount_tax": 110160.0,
+      "amount_untaxed": 1101600.0,
+      "currency_id": 157,
+      "partner_id": 25355,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014540",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "SILVA, YESSICA SOLEDAD",
+      "partner_vat": "5314646-8",
+      "country_id": 185
+    },
+    {
+      "id": 114726,
+      "name": "VTA/2026/09648",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1333800.0,
+      "amount_tax": 121255.0,
+      "amount_untaxed": 1212545.0,
+      "currency_id": 157,
+      "partner_id": 28351,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014541",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "URBATT E.A.S",
+      "partner_vat": "80170975-0",
+      "country_id": 185
+    },
+    {
+      "id": 114763,
+      "name": "VTA/2026/09650",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 685000.0,
+      "amount_tax": 62272.0,
+      "amount_untaxed": 622728.0,
+      "currency_id": 157,
+      "partner_id": 24938,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014543",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "GUSTAVO GABRIEL IBARRA CARDOZO",
+      "partner_vat": "2193845-8",
+      "country_id": 185
+    },
+    {
+      "id": 114762,
+      "name": "VTA/2026/09649",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1193000.0,
+      "amount_tax": 108455.0,
+      "amount_untaxed": 1084545.0,
+      "currency_id": 157,
+      "partner_id": 25321,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014542",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "CACERES VERA, LUIS ANTONIO",
+      "partner_vat": "4791245-6",
+      "country_id": 185
+    },
+    {
+      "id": 114764,
+      "name": "VTA/2026/09651",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 2290500.0,
+      "amount_tax": 208227.0,
+      "amount_untaxed": 2082273.0,
+      "currency_id": 157,
+      "partner_id": 25600,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014544",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "REYES MARECO, VILMA MERCEDES",
+      "partner_vat": "5779096-5",
+      "country_id": 185
+    },
+    {
+      "id": 114765,
+      "name": "VTA/2026/09652",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 312500.0,
+      "amount_tax": 28409.0,
+      "amount_untaxed": 284091.0,
+      "currency_id": 157,
+      "partner_id": 25600,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014545",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "REYES MARECO, VILMA MERCEDES",
+      "partner_vat": "5779096-5",
+      "country_id": 185
+    },
+    {
+      "id": 114767,
+      "name": "VTA/2026/09653",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 340000.0,
+      "amount_tax": 30909.0,
+      "amount_untaxed": 309091.0,
+      "currency_id": 157,
+      "partner_id": 25600,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014546",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "REYES MARECO, VILMA MERCEDES",
+      "partner_vat": "5779096-5",
+      "country_id": 185
+    },
+    {
+      "id": 114768,
+      "name": "RVTA/2026/00635",
+      "move_type": "out_refund",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 1931832.0,
+      "amount_tax": 175621.0,
+      "amount_untaxed": 1756211.0,
+      "currency_id": 157,
+      "partner_id": 24568,
+      "authorization_id": 2,
+      "invoice_number": "001-001-0001014",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "MARTINEZ FLEITAS, HECTOR RAMON",
+      "partner_vat": "4753920-8",
+      "country_id": 185
+    },
+    {
+      "id": 114709,
+      "name": "VTA/2026/09636",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 2204000.0,
+      "amount_tax": 200363.0,
+      "amount_untaxed": 2003637.0,
+      "currency_id": 157,
+      "partner_id": 24639,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014529",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "SARABIA SANDOVAL, DANIEL",
+      "partner_vat": "6029636-4",
+      "country_id": 185
+    },
+    {
+      "id": 114708,
+      "name": "VTA/2026/09635",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 27808086.0,
+      "amount_tax": 2528008.0,
+      "amount_untaxed": 25280078.0,
+      "currency_id": 157,
+      "partner_id": 24568,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014528",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "MARTINEZ FLEITAS, HECTOR RAMON",
+      "partner_vat": "4753920-8",
+      "country_id": 185
+    },
+    {
+      "id": 114856,
+      "name": "VTA/2026/09654",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 3615500.0,
+      "amount_tax": 328682.0,
+      "amount_untaxed": 3286818.0,
+      "currency_id": 157,
+      "partner_id": 25212,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014547",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "ALBINO ISMAEL GIMENEZ AGUILAR",
+      "partner_vat": "4257924-4",
+      "country_id": 185
+    },
+    {
+      "id": 114866,
+      "name": "VTA/2026/09655",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 2198000.0,
+      "amount_tax": 199817.0,
+      "amount_untaxed": 1998183.0,
+      "currency_id": 157,
+      "partner_id": 25439,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014548",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "ESCOBAR SERVIAN, ROBERTO MANUEL",
+      "partner_vat": "2009839-1",
+      "country_id": 185
+    },
+    {
+      "id": 114892,
+      "name": "VTA/2026/09656",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 8127500.0,
+      "amount_tax": 738863.0,
+      "amount_untaxed": 7388637.0,
+      "currency_id": 157,
+      "partner_id": 25321,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014549",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "CACERES VERA, LUIS ANTONIO",
+      "partner_vat": "4791245-6",
+      "country_id": 185
+    },
+    {
+      "id": 114896,
+      "name": "VTA/2026/09658",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 514260.0,
+      "amount_tax": 46751.0,
+      "amount_untaxed": 467509.0,
+      "currency_id": 157,
+      "partner_id": 25510,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014551",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "MARTINEZ MENDEZ, CELIA ESTHER",
+      "partner_vat": "4108795-0",
+      "country_id": 185
+    },
+    {
+      "id": 114926,
+      "name": "VTA/2026/09659",
+      "move_type": "out_invoice",
+      "state": "posted",
+      "invoice_date": "2026-08-14",
+      "amount_total": 5165000.0,
+      "amount_tax": 469546.0,
+      "amount_untaxed": 4695454.0,
+      "currency_id": 157,
+      "partner_id": 24294,
+      "authorization_id": 1,
+      "invoice_number": "001-001-0014552",
+      "fiscal_document": true,
+      "is_ed": true,
+      "timbrado_id": null,
+      "partner_name": "BENITEZ, VALENTIN",
+      "partner_vat": "1369920-2",
+      "country_id": 185
+    }
+  ],
+  "lines": {
+    "114713": [],
+    "113872": [],
+    "114719": [],
+    "114720": [],
+    "114721": [],
+    "114722": [],
+    "114726": [],
+    "114763": [],
+    "114762": [],
+    "114764": [],
+    "114765": [],
+    "114767": [],
+    "114768": [],
+    "114709": [],
+    "114708": [],
+    "114856": [],
+    "114866": [],
+    "114892": [],
+    "114896": [],
+    "114926": []
+  },
+  "partners": {
+    "24756": {
+      "id": 24756,
+      "name": "PUERTOS Y ESTIBAJES SA",
+      "vat": "80025504-6",
+      "country_id": 185
+    },
+    "28279": {
+      "id": 28279,
+      "name": "SAGAZ ARGUELLO, JONATHAN",
+      "vat": "5421676-1",
+      "country_id": 185
+    },
+    "26042": {
+      "id": 26042,
+      "name": "MARIAM  S.A",
+      "vat": "80045539-8",
+      "country_id": 185
+    },
+    "24360": {
+      "id": 24360,
+      "name": "JUAN ALFREDO ALCARAZ BENITEZ",
+      "vat": "2278110-2",
+      "country_id": 185
+    },
+    "25020": {
+      "id": 25020,
+      "name": "FERNANDEZ GONZALEZ, JULIO CESAR",
+      "vat": "3638829-7",
+      "country_id": 185
+    },
+    "25355": {
+      "id": 25355,
+      "name": "SILVA, YESSICA SOLEDAD",
+      "vat": "5314646-8",
+      "country_id": 185
+    },
+    "28351": {
+      "id": 28351,
+      "name": "URBATT E.A.S",
+      "vat": "80170975-0",
+      "country_id": 185
+    },
+    "24938": {
+      "id": 24938,
+      "name": "GUSTAVO GABRIEL IBARRA CARDOZO",
+      "vat": "2193845-8",
+      "country_id": 185
+    },
+    "25321": {
+      "id": 25321,
+      "name": "CACERES VERA, LUIS ANTONIO",
+      "vat": "4791245-6",
+      "country_id": 185
+    },
+    "25600": {
+      "id": 25600,
+      "name": "REYES MARECO, VILMA MERCEDES",
+      "vat": "5779096-5",
+      "country_id": 185
+    },
+    "24568": {
+      "id": 24568,
+      "name": "MARTINEZ FLEITAS, HECTOR RAMON",
+      "vat": "4753920-8",
+      "country_id": 185
+    },
+    "24639": {
+      "id": 24639,
+      "name": "SARABIA SANDOVAL, DANIEL",
+      "vat": "6029636-4",
+      "country_id": 185
+    },
+    "25212": {
+      "id": 25212,
+      "name": "ALBINO ISMAEL GIMENEZ AGUILAR",
+      "vat": "4257924-4",
+      "country_id": 185
+    },
+    "25439": {
+      "id": 25439,
+      "name": "ESCOBAR SERVIAN, ROBERTO MANUEL",
+      "vat": "2009839-1",
+      "country_id": 185
+    },
+    "25510": {
+      "id": 25510,
+      "name": "MARTINEZ MENDEZ, CELIA ESTHER",
+      "vat": "4108795-0",
+      "country_id": 185
+    },
+    "24294": {
+      "id": 24294,
+      "name": "BENITEZ, VALENTIN",
+      "vat": "1369920-2",
+      "country_id": 185
+    }
+  },
+  "schema_differences": [],
+  "taxes": [
+    {
+      "id": 1,
+      "name": "{\"en_US\": \"10% IVA incluido\", \"es_ES\": \"10% IVA incluido\"}",
+      "amount": 10.0,
+      "type_tax_use": "sale"
+    },
+    {
+      "id": 8,
+      "name": "{\"en_US\": \"10% IVA incluido\"}",
+      "amount": 10.0,
+      "type_tax_use": "purchase"
+    },
+    {
+      "id": 2,
+      "name": "{\"en_US\": \"5%\"}",
+      "amount": 5.0,
+      "type_tax_use": "sale"
+    },
+    {
+      "id": 5,
+      "name": "{\"en_US\": \"5%\"}",
+      "amount": 5.0,
+      "type_tax_use": "purchase"
+    },
+    {
+      "id": 3,
+      "name": "{\"en_US\": \"Exentas\"}",
+      "amount": 0.0,
+      "type_tax_use": "sale"
+    },
+    {
+      "id": 6,
+      "name": "{\"en_US\": \"Exentas\"}",
+      "amount": 0.0,
+      "type_tax_use": "purchase"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "name": "{\"en_US\": \"ACTIVO\"}",
+      "account_type": "asset_current",
+      "code_store": "{\"1\": \"1.0.0.00.0000\"}"
+    },
+    {
+      "id": 2,
+      "name": "{\"en_US\": \"ACTIVO CORRIENTE\"}",
+      "account_type": "asset_current",
+      "code_store": "{\"1\": \"1.1.0.00.0000\"}"
+    },
+    {
+      "id": 3,
+      "name": "{\"en_US\": \"DISPONIBILIDADES\"}",
+      "account_type": "asset_current",
+      "code_store": "{\"1\": \"1.1.1.00.0000\"}"
+    },
+    {
+      "id": 4,
+      "name": "{\"en_US\": \"RECAUDACIONES A DEPOSITAR\"}",
+      "account_type": "asset_current",
+      "code_store": "{\"1\": \"1.1.1.01.0000\"}"
+    },
+    {
+      "id": 5,
+      "name": "{\"en_US\": \"CAJA - N/A\", \"es_ES\": \"CAJA - N/A\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.02.0000\"}"
+    },
+    {
+      "id": 6,
+      "name": "{\"en_US\": \"CAJA M/N\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.02.0001\"}"
+    },
+    {
+      "id": 7,
+      "name": "{\"en_US\": \"FONDOS FIJOS - N/A\", \"es_ES\": \"FONDOS FIJOS - N/A\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.03.0000\"}"
+    },
+    {
+      "id": 8,
+      "name": "{\"en_US\": \"FONDOS FIJOS M/N\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.03.0001\"}"
+    },
+    {
+      "id": 9,
+      "name": "{\"en_US\": \"FONDO DE VI\u00c1TICOS\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.03.0002\"}"
+    },
+    {
+      "id": 10,
+      "name": "{\"en_US\": \"CAJA CHICA M/N\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.03.0003\"}"
+    },
+    {
+      "id": 11,
+      "name": "{\"en_US\": \"FONDO DE CAMBIO\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.03.0004\"}"
+    },
+    {
+      "id": 12,
+      "name": "{\"en_US\": \"BANCOS M/N - N/A\", \"es_ES\": \"BANCOS M/N - N/A\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0000\"}"
+    },
+    {
+      "id": 13,
+      "name": "{\"en_US\": \"BANCO CONTINENTAL CTA CTE\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0001\"}"
+    },
+    {
+      "id": 14,
+      "name": "{\"en_US\": \"BANCO ATLAS CTA. CTE. MN\", \"es_ES\": \"BANCO ATLAS CTA. CTE. MN\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0002\"}"
+    },
+    {
+      "id": 15,
+      "name": "{\"en_US\": \"BANCO REGIONAL CTA. CTE.\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0003\"}"
+    },
+    {
+      "id": 16,
+      "name": "{\"en_US\": \"BANCO NACIONAL DE FOMENTO CTA. AHORRO\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0004\"}"
+    },
+    {
+      "id": 17,
+      "name": "{\"en_US\": \"BANCO SUDAMERIS CTA. CTE.\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0005\"}"
+    },
+    {
+      "id": 18,
+      "name": "{\"en_US\": \"BANCO VISION CTA. AHORRO\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0006\"}"
+    },
+    {
+      "id": 19,
+      "name": "{\"en_US\": \"BANCO VISION CTA. CTE.\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0007\"}"
+    },
+    {
+      "id": 20,
+      "name": "{\"en_US\": \"UENO BANK CTA. AHORRO\"}",
+      "account_type": "asset_cash",
+      "code_store": "{\"1\": \"1.1.1.04.0008\"}"
+    }
+  ],
+  "journals": [
+    {
+      "id": 19,
+      "code": "A-UEN",
+      "name": "{\"en_US\": \"UENO BANK CTA. AHORRO\", \"es_ES\": \"UENO BANK CTA. AHORRO\"}",
+      "type": "bank"
+    },
+    {
+      "id": 12,
+      "code": "ATLgs",
+      "name": "{\"en_US\": \"BANCO ATLAS M/N\", \"es_ES\": \"BANCO ATLAS M/N\"}",
+      "type": "bank"
+    },
+    {
+      "id": 13,
+      "code": "ATLus",
+      "name": "{\"en_US\": \"BANCO ATLAS M/E\", \"es_ES\": \"BANCO ATLAS M/E\"}",
+      "type": "bank"
+    },
+    {
+      "id": 11,
+      "code": "BCN",
+      "name": "{\"en_US\": \"BANCO CONTINENTAL CTA CTE\", \"es_ES\": \"BANCO CONTINENTAL CTA CTE\"}",
+      "type": "bank"
+    },
+    {
+      "id": 15,
+      "code": "BNF",
+      "name": "{\"en_US\": \"BANCO NACIONAL DE FOMENTO CTA. AHORRO\", \"es_ES\": \"BANCO NACIONAL DE FOMENTO CTA. AHORRO\"}",
+      "type": "bank"
+    },
+    {
+      "id": 6,
+      "code": "BNK1",
+      "name": "{\"en_US\": \"Bank\", \"es_ES\": \"Banco\"}",
+      "type": "bank"
+    },
+    {
+      "id": 14,
+      "code": "BNK5",
+      "name": "{\"en_US\": \"BANCO REGIONAL CTA. CTE.\", \"es_ES\": \"BANCO REGIONAL CTA. CTE.\"}",
+      "type": "bank"
+    },
+    {
+      "id": 17,
+      "code": "BNK8",
+      "name": "{\"en_US\": \"BANCO VISION CTA. AHORRO\", \"es_ES\": \"BANCO VISION CTA. AHORRO\"}",
+      "type": "bank"
+    },
+    {
+      "id": 18,
+      "code": "BNK9",
+      "name": "{\"en_US\": \"BANCO VISION CTA. CTE.\", \"es_ES\": \"BANCO VISION CTA. CTE.\"}",
+      "type": "bank"
+    },
+    {
+      "id": 16,
+      "code": "BSUD",
+      "name": "{\"en_US\": \"BANCO SUDAMERIS CTA. CTE.\", \"es_ES\": \"BANCO SUDAMERIS CTA. CTE.\"}",
+      "type": "bank"
+    },
+    {
+      "id": 20,
+      "code": "CC-UE",
+      "name": "{\"en_US\": \"UENO BANK CTA. CTE.\", \"es_ES\": \"UENO BANK CTA. CTE.\"}",
+      "type": "bank"
+    },
+    {
+      "id": 27,
+      "code": "CHDIF",
+      "name": "{\"en_US\": \"CHEQUES DIFERIDOS POR COBRAR\", \"es_ES\": \"CHEQUES DIFERIDOS POR COBRAR\"}",
+      "type": "bank"
+    },
+    {
+      "id": 34,
+      "code": "CHRJU",
+      "name": "{\"en_US\": \"CHEQUES RECHAZADOS EN JUDICIALES\", \"es_ES\": \"CHEQUES RECHAZADOS EN JUDICIALES\"}",
+      "type": "bank"
+    },
+    {
+      "id": 28,
+      "code": "CHRZB",
+      "name": "{\"en_US\": \"CHEQUE RECHAZADO BANCARIO\", \"es_ES\": \"CHEQUE RECHAZADO BANCARIO\"}",
+      "type": "bank"
+    },
+    {
+      "id": 29,
+      "code": "CHRZI",
+      "name": "{\"en_US\": \"CHEQUE RECHAZADO INTERNO\", \"es_ES\": \"CHEQUE RECHAZADO INTERNO\"}",
+      "type": "bank"
+    },
+    {
+      "id": 36,
+      "code": "BNK2",
+      "name": "{\"en_US\": \"Retenciones recibidas IVA\", \"es_ES\": \"Retenciones recibidas IVA\"}",
+      "type": "cash"
+    },
+    {
+      "id": 10,
+      "code": "CH-MG",
+      "name": "{\"en_US\": \"CAJA CHICA\", \"es_ES\": \"CAJA CHICA\"}",
+      "type": "cash"
+    },
+    {
+      "id": 40,
+      "code": "CSH1",
+      "name": "{\"en_US\": \"FONDO A RENDIR SARA YEZA\", \"es_ES\": \"FONDO A RENDIR SARA YEZA\"}",
+      "type": "cash"
+    },
+    {
+      "id": 35,
+      "code": "CTADO",
+      "name": "{\"en_US\": \"CAJA VENTAS CONTADO\", \"es_ES\": \"CAJA VENTAS CONTADO\"}",
+      "type": "cash"
+    },
+    {
+      "id": 23,
+      "code": "FC-MF",
+      "name": "{\"en_US\": \"FONDO CAMBIO\", \"es_ES\": \"FONDO CAMBIO\"}",
+      "type": "cash"
+    },
+    {
+      "id": 46,
+      "code": "FR-A1",
+      "name": "{\"en_US\": \"FONDO A RENDIR ALBERTO MEZA\", \"es_ES\": \"FONDO A RENDIR ALBERTO MEZA\"}",
+      "type": "cash"
+    },
+    {
+      "id": 24,
+      "code": "FR-AM",
+      "name": "{\"en_US\": \"FONDO A RENDIR ACTIVACION COM\", \"es_ES\": \"FONDO A RENDIR ACTIVACION COM\"}",
+      "type": "cash"
+    },
+    {
+      "id": 43,
+      "code": "FR-LP",
+      "name": "{\"en_US\": \"FONDO A RENDIR LUIS PAIVA\", \"es_ES\": \"FONDO A RENDIR LUIS PAIVA\"}",
+      "type": "cash"
+    },
+    {
+      "id": 25,
+      "code": "FR-LV",
+      "name": "{\"en_US\": \"FONDO A RENDIR LIBRADA VERA\", \"es_ES\": \"FONDO A RENDIR LIBRADA VERA\"}",
+      "type": "cash"
+    },
+    {
+      "id": 26,
+      "code": "FR-SA",
+      "name": "{\"en_US\": \"FONDO A RENDIR SERVIO AGUERO\", \"es_ES\": \"FONDO A RENDIR SERVIO AGUERO\"}",
+      "type": "cash"
+    },
+    {
+      "id": 21,
+      "code": "SCP",
+      "name": "{\"en_US\": \"CAJA GENERAL M/N\", \"es_ES\": \"CAJA GENERAL M/N\"}",
+      "type": "cash"
+    },
+    {
+      "id": 37,
+      "code": "SILIN",
+      "name": "{\"en_US\": \"COBRANZA INTERIOR\", \"es_ES\": \"COBRANZA INTERIOR\"}",
+      "type": "cash"
+    },
+    {
+      "id": 22,
+      "code": "V-MFG",
+      "name": "{\"en_US\": \"FONDO VIATICOS\", \"es_ES\": \"FONDO VIATICOS\"}",
+      "type": "cash"
+    },
+    {
+      "id": 5,
+      "code": "CABA",
+      "name": "{\"en_US\": \"Cash Basis Taxes\", \"es_ES\": \"Impuestos con criterio de caja\"}",
+      "type": "general"
+    },
+    {
+      "id": 4,
+      "code": "CAMBI",
+      "name": "{\"en_US\": \"Exchange Difference\", \"es_ES\": \"Diferencia de cambio\"}",
+      "type": "general"
+    },
+    {
+      "id": 32,
+      "code": "CCSOC",
+      "name": "{\"en_US\": \"CUENTA POR COBRAR SOCIOS\", \"es_ES\": \"CUENTA POR COBRAR SOCIOS\"}",
+      "type": "general"
+    },
+    {
+      "id": 42,
+      "code": "COSTD",
+      "name": "{\"en_US\": \"Costo en Destino\", \"es_ES\": \"Costo en Destino\"}",
+      "type": "general"
+    },
+    {
+      "id": 38,
+      "code": "FALTA",
+      "name": "{\"en_US\": \"Ajustes de Caja por Faltante\", \"es_ES\": \"Ajustes de Caja por Faltante\"}",
+      "type": "general"
+    },
+    {
+      "id": 31,
+      "code": "PERSO",
+      "name": "{\"en_US\": \"PRESTAMOS AL PERSONAL\", \"es_ES\": \"PRESTAMOS AL PERSONAL\"}",
+      "type": "general"
+    },
+    {
+      "id": 9,
+      "code": "SLR",
+      "name": "{\"en_US\": \"Salarios\"}",
+      "type": "general"
+    },
+    {
+      "id": 39,
+      "code": "SOBRA",
+      "name": "{\"en_US\": \"Ajuste de Caja por Sobrante\", \"es_ES\": \"Ajuste de Caja por Sobrante\"}",
+      "type": "general"
+    },
+    {
+      "id": 30,
+      "code": "TERCE",
+      "name": "{\"en_US\": \"CUENTAS POR COBRAR TERCEROS\", \"es_ES\": \"CUENTAS POR COBRAR TERCEROS\"}",
+      "type": "general"
+    },
+    {
+      "id": 33,
+      "code": "TOYOP",
+      "name": "{\"en_US\": \"CUENTA POR COBRAR TOYOPAR\", \"es_ES\": \"CUENTA POR COBRAR TOYOPAR\"}",
+      "type": "general"
+    },
+    {
+      "id": 8,
+      "code": "VALIN",
+      "name": "{\"en_US\": \"Valoraci\u00f3n del inventario\", \"es_ES\": \"Valoraci\u00f3n del inventario\"}",
+      "type": "general"
+    },
+    {
+      "id": 3,
+      "code": "Vario",
+      "name": "{\"en_US\": \"Miscellaneous Operations\", \"es_ES\": \"Operaciones varias\"}",
+      "type": "general"
+    },
+    {
+      "id": 2,
+      "code": "PAGO",
+      "name": "{\"en_US\": \"Vendor Bills\", \"es_ES\": \"Facturas de proveedores\"}",
+      "type": "purchase"
+    },
+    {
+      "id": 1,
+      "code": "VTA",
+      "name": "{\"en_US\": \"Customer Invoices\", \"es_ES\": \"Facturas de cliente\"}",
+      "type": "sale"
+    }
+  ],
+  "authorization_count": 4
+}

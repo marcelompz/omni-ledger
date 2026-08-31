@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2025-04-11 12:18:29
+    @author: drojo
+-->
+<odoo>
+
+    <!-- form view -->
+
+    <record id="cross_from_to_wizard_form" model="ir.ui.view">
+        <field name="name">cross.from.to.wizard.form</field>
+        <field name="model">cross.from.to.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <label for="date_from"/>
+                        <div name="date_div" class="d-flex">
+                            <field name="date_from"/>
+                            <span class="oe_inline o_form_label mx-3"> Hasta </span>
+                            <field name="date_to"/>
+                        </div>
+                        <field name="partner_id" string="Cliente *" options="{'no_create': 1, 'no_open': 1}" attrs="{'invisible': [('report_origin', '!=', 'receivable')]}"/>
+                        <field name="partner_id" string="Proveddor *" options="{'no_create': 1, 'no_open': 1}" attrs="{'invisible': [('report_origin', '=', 'receivable')]}"/>
+                    </group>
+                    <group>
+                        <field name="file_type" required="1" widget="radio" options="{'horizontal': true}"/>
+                        <field name="report_origin" invisible="1"/>
+                    </group>
+                </group>
+                <div class="text-muted text-end">
+                    <br/>
+                    <t t-if="report_origin == 'receivable'">
+                        * Dejar el campo de Cliente vacío para que se genere el reporte de todos los clientes.
+                    </t>
+                    <t t-else="">
+                        * Dejar el campo de Proveedor vacío para que se genere el reporte de todos los proveedores.
+                    </t>
+                </div>
+                <footer>
+                    <button string=" Generar" name="action_done" type="object" class="oe_highlight"/>
+                    <button string=" Cerrar" class="btn btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- window action receivable -->
+
+    <record id="cross_from_to_wizard_receivable_action" model="ir.actions.act_window">
+        <field name="name">Cuentas a cobrar</field>
+        <field name="res_model">cross.from.to.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="context">{
+            'default_report_origin': 'receivable',
+        }</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- menu item receivable -->
+
+    <menuitem
+        id="cross_from_to_wizard_receivable_menu"
+        name="Cuentas a cobrar"
+        parent="account_books_reports_cross.account_books_report_main_menu"
+        action="account_books_reports_cross.cross_from_to_wizard_receivable_action"
+        sequence="3"
+    />
+
+    <!-- window action payable -->
+
+    <record id="cross_from_to_wizard_payable_action" model="ir.actions.act_window">
+        <field name="name">Cuentas a pagar</field>
+        <field name="res_model">cross.from.to.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="context">{
+            'default_report_origin': 'payable',
+        }</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- menu item payable -->
+
+    <menuitem
+        id="cross_from_to_wizard_payable_menu"
+        name="Cuentas a pagar"
+        parent="account_books_reports_cross.account_books_report_main_menu"
+        action="account_books_reports_cross.cross_from_to_wizard_payable_action"
+        sequence="4"
+    />
+
+    
+
+</odoo>

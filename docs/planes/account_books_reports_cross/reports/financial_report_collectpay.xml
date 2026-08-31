@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2025-04-12 16:00:42
+    @author: drojo
+-->
+<odoo>
+
+    <!-- report document -->
+    
+    <template id="financial_report_collectpay_document">
+        <t t-call="web.basic_layout">
+
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="font-size: 10px;">
+                    <t t-set="company" t-value="env.company"/>
+                    <t t-set="activities" t-value="' / '.join(line.name for line in company.type_obligations_id)"/>
+
+                    <!-- primary header -->
+                    <div class="text-center" style="line-height: 1.2;">
+                        <div style="font-size: 20px; font-weight: bold;"><t t-esc="doc.name"/></div>
+                        <div style="font-size: 15px; font-weight: bold;">
+                            ACTIVIDAD: <t t-esc="activities"/> - A LA FECHA: <span t-field="doc.date_to"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 p-1">
+                            <span style="font-size: 10px;">1. Identificador del Contribuyente</span>
+                            <table class="table border">
+                                <tr>
+                                    <th class="text-center border">RAZON SOCIAL/NOMBRES Y APELLIDOS</th>    
+                                    <th class="text-center border">RUC</th>
+                                </tr> 
+                                <tr>
+                                    <th class="text-start border"><span t-field="company.name"/></th>    
+                                    <th class="text-start border"><span t-field="company.vat"/></th>
+                                </tr> 
+                            </table>
+                        </div>
+                        <div class="col-2 p-1">
+                            <span style="font-size: 10px;">2. Periodo Fiscal</span>
+                            <table class="table border">
+                                <tr>
+                                    <th class="text-center border">DESDE</th>    
+                                    <th class="text-center border">HASTA</th>
+                                </tr> 
+                                <tr>
+                                    <th class="text-center border"><span t-field="doc.date_from"/></th>    
+                                    <th class="text-center border"><span t-field="doc.date_to"/></th>
+                                </tr> 
+                            </table>
+                        </div>
+                        <div class="col-3 p-1">
+                            <span style="font-size: 10px;">3. Representante Legal</span>
+                            <table class="table border">
+                                <tr>
+                                    <th class="text-center border">NOMBRES Y APELLIDOS</th>    
+                                </tr> 
+                                <tr>
+                                    <th class="text-start border"><span t-esc="company.legal_representative_id.name or ''"/></th>    
+                                </tr> 
+                            </table>
+                        </div>
+                        <div class="col-3 p-1">
+                            <span style="font-size: 10px;">4. Identificador del Contador</span>
+                            <table class="table border">
+                                <tr>
+                                    <th class="text-center border">NOMBRES Y APELLIDOS</th>    
+                                    <th class="text-center border">RUC</th>
+                                </tr> 
+                                <tr>
+                                    <th class="text-start border"><span t-field="company.accountant_identifier_id.name"/></th>    
+                                    <th class="text-start border"><span t-field="company.accountant_identifier_id.vat"/></th>
+                                </tr> 
+                            </table>
+                        </div>
+                    </div>
+
+                     <table class="table" style="font-size: 9px;">
+                        <t-head>
+                            <tr>
+                                <th class="text-center">DOCUMENTO</th>
+                                <th class="text-center">FECHA</th>
+                                <th class="text-center">RUC</th>
+                                <th class="text-center">RAZON SOCIAL</th>
+                                <th class="text-center">MON.</th>
+                                <th class="text-center">TOTAL</th>
+                                <th class="text-center">SALDO</th>
+                                <th class="text-center">SALDO GS.</th>
+                            </tr>
+                        </t-head>
+                       <t-body>
+                            <t t-set="amount_total" t-value="0"/>
+                            <tr t-foreach="sorted(doc.move_ids, key=lambda l: l.partner_id.name)" t-as="line">
+                                <t t-set="amount_total" t-value="amount_total + line.amount_residual_signed"/>
+                                <td class="text-center"><span t-esc="line.invoice_number or line.name or ''"/></td>
+                                <td class="text-center"><span t-esc="line.invoice_date.strftime('%d-%m-%Y')"/></td>
+                                <td class="text-center"><span t-esc="line.partner_id.vat or ''"/></td>
+                                <td class="text-start"><span t-esc="line.partner_id.name or ''"/></td>
+                                <td class="text-center"><span t-esc="line.currency_id.name or ''"/></td>
+                                <td class="text-end"><span t-field="line.amount_total_in_currency_signed"/></td>
+                                <td class="text-end"><span t-field="line.amount_residual"/></td>
+                                <td class="text-end"><span t-field="line.amount_residual_signed"/></td>
+                            </tr>
+                        </t-body>
+                    </table>
+                    <hr/>
+                    <div class="row border">
+                        <div class="col-10 text-start">TOTAL GENERAL</div>
+                        <div class="col-2 text-end"><strong t-esc="amount_total" t-options="{'widget': 'monetary', 'display_currency': company.currency_id}"/></div>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- report action -->
+
+    <record id="action_financial_report_collectpay" model="ir.actions.report">
+        <field name="name">Reporte Financiero</field>
+        <field name="model">financial.report.collectpay.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">account_books_reports_cross.financial_report_collectpay_document</field>
+        <field name="report_file">account_books_reports_cross.financial_report_collectpay_document</field>
+        <field name="binding_model_id" eval="False"/>
+        <field name="paperformat_id" ref="account_books_reports_cross.paperformat_folio_landscape_narrow"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">('%s - %s a %s' % (object.name, object.date_from.strftime('%d-%m-%Y'), object.date_to.strftime('%d-%m-%Y')))</field>
+    </record>
+
+</odoo>

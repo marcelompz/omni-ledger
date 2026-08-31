@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    Create on 2024-10-11 11:07:30
+    @author: drojo
+-->
+<odoo>
+
+    <!-- form view -->
+
+    <record id="account_books_report_wizard_form" model="ir.ui.view">
+        <field name="name">account.books.report.wizard.form</field>
+        <field name="model">account.books.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reporte Libro IVA">
+                <header>
+                </header>
+                <group>
+                    <group>
+                        <field name="date_from" required="1"/>
+                        <field name="date_to" required="1"/>
+                        <field name="file_type" required="1" widget="radio" options="{'horizontal': true}"/>
+                        <field name="currency_id" options="{'no_create': 1, 'no_open': 1}"/>
+                    </group>
+                    <group>
+                        <field name="report_type" required="1" widget="radio" options="{'horizontal': true}"/>
+                        <field name="invoice_state_ids" required="1" widget="many2many_checkboxes"/>
+                    </group>
+                </group>
+                <field name="lines_ids" invisible="1">
+                    <tree>
+                        <field name="invoice_id" invisible="1"/>
+                        <field name="invoice_date" string="Fecha"/>
+                        <field name="authorization_id" string="Tipo Timbrado"/>
+                        <field name="invoice_number"/>
+                        <field name="serie"/>
+                        <field name="cdc"/>
+                        <field name="in_invoice_stamped" string="Timbrado"/>
+                        <field name="in_invoice_stamped_date_due" string="Venc."/>
+                        <field name="out_invoice_stamped" string="Timbrado"/>
+                        <field name="out_invoice_stamped_date_due" string="Venc."/>
+                        <field name="partner_id"/>
+                        <field name="partner_vat"/>
+                        <field name="partner_vat_dv"/>
+                        <field name="amount_iva10_tax_included"/>
+                        <field name="amount_iva5_tax_included"/>
+                        <field name="amount_iva10"/>
+                        <field name="amount_iva5"/>
+                        <field name="amount_iva0"/>
+                        <field name="amount_total"/>
+                        <field name="currency_id"/>
+                        <field name="invoice_condition"/>
+                        <field name="accounts"/>
+                        <field name="form145_id"/>
+                        <field name="reasons_inclusion_id"/>
+                        <field name="details_inclusion"/>
+                        <field name="reasons_cancelled"/>
+                        <field name="form120_id"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button string=" Generar" name="button_action_generate_report" type="object" class="oe_highlight" icon="fa-file-text"/>
+                    <button string=" Cerrar" class="btn btn-secondary" special="cancel" icon="fa-window-close-o"/>
+                    <!-- <button string=" TEST" name="action_test" type="object" class="oe_highlight" icon="fa-file-text"/> -->
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- window action -->
+
+    <record id="account_books_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Reportes libro IVA</field>
+        <field name="res_model">account.books.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- menu -->
+
+    <menuitem
+        id="account_books_report_main_menu"
+        name="Contabilidad Paraguay"
+        parent="account.menu_finance_reports"
+        sequence="5"
+    />
+
+    <menuitem
+        id="account_books_report_wizard_menu"
+        name="Reportes libro IVA"
+        action="account_books_reports_cross.account_books_report_wizard_action"
+        parent="account_books_reports_cross.account_books_report_main_menu"
+        sequence="1"
+    />
+
+</odoo>
