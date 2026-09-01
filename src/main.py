@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.api.v1.moves import router as moves_router
+from src.api.v1.reports import router as reports_router
 
 app = FastAPI(
     title="OmniLedger",
@@ -23,3 +24,4 @@ async def health_check():
 
 
 app.include_router(moves_router, prefix="/api/v1")
+app.include_router(reports_router, prefix="/api/v1")
