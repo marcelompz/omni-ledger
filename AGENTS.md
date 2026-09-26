@@ -25,6 +25,7 @@ Antes de examinar código o ejecutar cualquier acción en la base del proyecto, 
 6. **Formato y Convención `kebab-case`:** Uso estricto de `kebab-case` para nombres de archivos (`.py`, `.sh`, `.md`).
 7. **Sincronización de Documentación con Wiki & Monorepo Core:** Toda actualización de documentación en `docs/` o `README.md` debe sincronizarse con la Wiki oficial (`/opt/wiki/orderflow/`) y registrarse en `ROADMAP.md`, `CHANGELOG.md` y `VERSION` del ecosistema.
 8. **Autorización Previa Obligatoria para Despliegues:** Queda estrictamente PROHIBIDO que la IA ejecute despliegues, builds de producción, reinicios de contenedores o comandos/scripts de deploy (tales como `docker compose up`, `deploy-production.sh`, etc.) sin solicitar y obtener autorización previa y explícita del usuario.
+9. **Diagram-Driven Development & Telemetry-First (OBLIGATORIO):** Todo nuevo submódulo o flujo contable complejo debe nacer con un archivo `flujo_<modulo>.md` en su respectivo directorio `docs/planes/`. Este documento debe contener un diagrama de secuencia en formato Mermaid detallando los actores, endpoints, eventos y las transacciones asíncronas involucradas. Además, debe declarar de forma obligatoria los **Hitos de Telemetría (t0...tN)** para medir tiempos de procesamiento y KPIs. La implementación en el código Python/PostgreSQL DEBE usar exactamente la misma nomenclatura de hitos declarada en el diagrama.
 
 ---
 
